@@ -11,8 +11,8 @@ var malboFacts = [
 
 /*Functions for stuff*/
 
-function rng(blah) {
-    return Math.floor(Math.random() * blah.length);
+function rng(array) {
+    return Math.floor(Math.random() * array.length);
 }
 
 //Check incoming chat messages and do stuff and things
@@ -32,7 +32,7 @@ function parseChat(data) {
     
     if (data.message.match(/-malbofacts/)) {
             API.sendChat(malboFacts[rng(malboFacts)]);
-            log("test");
+            console.log("test");
         }
         
     
