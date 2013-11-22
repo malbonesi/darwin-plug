@@ -31,7 +31,7 @@ function parseChat(data) {
     }
     
     if (data.message.match(/-malbofacts/)) {
-            API.sendChat("'"+malboFacts[rng(malboFacts)]"'");
+            API.sendChat(rng(malboFacts));
         }
     
 }
