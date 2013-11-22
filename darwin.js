@@ -1,13 +1,13 @@
 API.on(API.CHAT, parseChat);
-API.on(USER_JOIN, welcomeUser);
+API.on(API.USER_JOIN, welcomeUser);
 
 //Allow all managers and hosts to control Darwin? Or explicitly specify who can control in this file?
 
-var malboFacts = new Array(
+var malboFacts = [
     'Malbo is super hot.',
     'Malbo is vegan.',
-    'Malbo is in an awesome band called Winning Monroe'
-    );
+    'Malbo is in an awesome band called Winning Monroe.'
+    ];
 
 /*Functions for stuff*/
 
@@ -32,8 +32,9 @@ function parseChat(data) {
     }
     
     if (data.message.match(/-malbofacts/)) {
-    console.log("malbofacts array is " + malboFacts);
-            API.sendChat(malboFacts[rng(malboFacts)]);
+        console.log("malbofacts array is " + malboFacts);
+          API.sendChat(malboFacts[1]);  
+        //API.sendChat(malboFacts[rng(malboFacts)]);
             
         }
         
