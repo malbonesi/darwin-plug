@@ -11,6 +11,10 @@ var malboFacts = [
 
 /*Functions for stuff*/
 
+function rng(array) {
+    return Math.floor(Math.random() * array.length);
+}
+
 //Check incoming chat messages and do stuff and things
 function parseChat(data) {
 
@@ -21,11 +25,14 @@ function parseChat(data) {
     }
     */
     if (data.from.match(/AgLikeSilver/)){
-        if (data.message.match(/purr/ig)) {
+        if (data.message.match(/-purr/)) {
             API.sendChat("Meow?");   
         }
     }
     
+    if (data.message.match(/-malbofacts/)) {
+            API.sendChat(malboFacts[rng(malboFacts)]);
+        }
     
 }
 
