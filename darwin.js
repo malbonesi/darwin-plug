@@ -11,8 +11,8 @@ var malboFacts = [
 
 /*Functions for stuff*/
 
-function rng(array) {
-    return Math.floor(Math.random() * array.length);
+function rng(blah) {
+    return Math.floor(Math.random() * blah.length);
 }
 
 //Check incoming chat messages and do stuff and things
