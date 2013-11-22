@@ -31,8 +31,9 @@ function parseChat(data) {
     }
     
     if (data.message.match(/-malbofacts/)) {
+    console.log("test");
             API.sendChat(malboFacts[rng(malboFacts)]);
-            console.log("test");
+            
         }
         
     
