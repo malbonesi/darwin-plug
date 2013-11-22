@@ -12,6 +12,7 @@ var malboFacts = [
 /*Functions for stuff*/
 
 function rng(array) {
+    console.log("array is " + array);
     return Math.floor(Math.random() * array.length);
 }
 
@@ -31,7 +32,7 @@ function parseChat(data) {
     }
     
     if (data.message.match(/-malbofacts/)) {
-    console.log("test");
+    console.log("malbofacts array is " + malboFacts);
             API.sendChat(malboFacts[rng(malboFacts)]);
             
         }
