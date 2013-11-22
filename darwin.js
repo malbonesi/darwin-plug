@@ -3,11 +3,11 @@ API.on(USER_JOIN, welcomeUser);
 
 //Allow all managers and hosts to control Darwin? Or explicitly specify who can control in this file?
 
-var malboFacts = [
+var malboFacts = new Array(
     'Malbo is super hot.',
     'Malbo is vegan.',
     'Malbo is in an awesome band called Winning Monroe'
-    ];
+    );
 
 /*Functions for stuff*/
 
