@@ -22,8 +22,7 @@ function parseChat(data) {
 
 if (data.message.match(/^-/) && data.message.match(/facts/)) { //will probably want to separate out the '-' for easter eggs
     var u = data.message;
-    u = u.substr(1);
-    u = u.substr(-5);
+    u = u.substr(1, u.length-6);
     API.sendChat(u);
     /*
     for (var key in facts) {
