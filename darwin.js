@@ -20,19 +20,24 @@ function rng(array) {
 //Check incoming chat messages and do stuff and things
 function parseChat(data) {
 
-if (data.message.match(/^-/) && data.message.match(/facts/)) { //will probably want to separate out the '-' for easter eggs
-    var u = data.message;
-    u = u.substr(1, u.length-6);
-    API.sendChat(u);
-    /*
-    for (var key in facts) {
-        
+var msg = data.message;
+
+if (msg.match(/^-/) && msg.match(/facts/)) { //will probably want to separate out the '-' for easter eggs
+
+    var person = msg.substr(1, msg.length-6); //take the string between the '-' and 'facts'
+    
+    if(person in facts){
+        var i = rng(facts.person);
+        API.sendChat(facts.person[i]);
     }
-    */
+    else {
+        API.sendChat('Sorry, I have no facts for ' + person + ':(');
+    }
+    
 }
 
-if (data.message.match(/-testhash/)) { API.sendChat(facts.malbo[1]); }
-    if (data.message.match(/-testhash2/)) { API.sendChat(facts.ag[0]); }
+if (msg.match(/-testhash/)) { API.sendChat(facts.malbo[1]); }
+    if (msg.match(/-testhash2/)) { API.sendChat(facts.ag[0]); }
     /*
     switch (data.message) {
         case data.message.match(/purr/ig):
@@ -40,10 +45,10 @@ if (data.message.match(/-testhash/)) { API.sendChat(facts.malbo[1]); }
     }
     */
     if (data.from.match(/AgLikeSilver/)){
-        if (data.message.match(/-purr/)) { API.sendChat("Meow?"); }
+        if (msg.match(/-purr/)) { API.sendChat("Meow?"); }
     }
     
-    if (data.message.match(/-malbofacts/)) {
+    if (msg.match(/-malbofacts/)) {
         var i = rng(malboFacts);
         API.sendChat(malboFacts[i]);
         //API.sendChat(malboFacts[rng(malboFacts)]); <-- wish I could do this :(           
