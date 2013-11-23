@@ -27,8 +27,8 @@ if (msg.match(/^-/) && msg.match(/facts/)) { //will probably want to separate ou
     var person = msg.substr(1, msg.length-6); //take the string between the '-' and 'facts'
     
     if(person in facts){
-        var i = rng(facts.person);
-        API.sendChat(facts.person[i]);
+        var i = rng(facts[person]);
+        API.sendChat(facts.[person][i]);
     }
     else {
         API.sendChat('Sorry, I have no facts for ' + person + ':(');
