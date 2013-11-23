@@ -33,7 +33,8 @@ function parseChat(data) {
     
     if (data.message.match(/-malbofacts/)) {
         console.log("malbofacts array is " + malboFacts);
-          API.sendChat(malboFacts[1]);  
+          var i = rng(malboFacts);
+          API.sendChat(malboFacts[i]);  
         //API.sendChat(malboFacts[rng(malboFacts)]);
             
         }
