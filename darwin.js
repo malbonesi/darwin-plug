@@ -26,9 +26,9 @@ if (msg.match(/^-/) && msg.match(/facts/)) { //will probably want to separate ou
 
     var person = msg.substr(1, msg.length-6); //take the string between the '-' and 'facts'
     
-    if(person in facts){
+    if(facts.hasOwnProperty(person)){
         var i = rng(facts[person]);
-        API.sendChat(facts.[person][i]);
+        API.sendChat(facts[person][i]);
     }
     else {
         API.sendChat('Sorry, I have no facts for ' + person + ':(');
@@ -36,8 +36,10 @@ if (msg.match(/^-/) && msg.match(/facts/)) { //will probably want to separate ou
     
 }
 
+/*
 if (msg.match(/-testhash/)) { API.sendChat(facts.malbo[1]); }
     if (msg.match(/-testhash2/)) { API.sendChat(facts.ag[0]); }
+*/
     /*
     switch (data.message) {
         case data.message.match(/purr/ig):
