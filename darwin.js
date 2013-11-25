@@ -41,7 +41,7 @@ function parseChat(data) {
 
     var msg = data.message; //Just to lessen code
 
-    if (msg.match(/^-/) && msg.match(/facts$/)) { //will probably want to separate out the '-' matching for non-commands
+    if (msg.match(/^-.*facts$/)) { //will probably want to separate out the '-' matching for non-commands
 
         var person = msg.substr(1, msg.length-6); //take the string between the '-' and 'facts'
     
