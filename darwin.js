@@ -21,7 +21,7 @@ var WAITCAP = 10;
 var facts = {
 malbo: [
         'fact1',
-        'fact2
+        'fact2'
        ],
 ag:    [
         'fact1', 
