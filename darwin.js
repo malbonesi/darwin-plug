@@ -6,7 +6,7 @@ Things to do:
 1. Cap waitlist at 10 - Sufficient
 2. Monitor afk status for DJs
 3. Add a help function for users to see which commands are available
-4. 
+4. GUI stuff
 */
 
 API.on(API.CHAT, parseChat);
@@ -67,7 +67,7 @@ function welcomeUser(user) {
 //So at the moment, it works assuming that the list is already below the cap
 function capWaitList(djs) {
 
-    if (djs.length == WAITCAP) { API.moderateLockBooth(true,false) }//lock
-    else { API.moderateLockBooth(false,false) }//unlock
+    if (djs.length < WAITCAP) { API.moderateLockWaitList(false,false) }//unlock
+    else { API.moderateLockWaitList(true,false) }//lock
     
 }
