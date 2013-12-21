@@ -45,10 +45,11 @@ function parseChat(data) {
     
     //Amanda's commands
     if (data.from == "malbo"){
-        switch (msg)
+        switch (msg) {
         case "!greetoff":
             API.sendChat('Turning greet off');
             break;
+        }
         
         /*
         if (msg == "!greetoff") { GREET = false; }
